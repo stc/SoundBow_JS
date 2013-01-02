@@ -23,6 +23,7 @@ info@binaura.net
   
   boolean clearWires = false;
   boolean resetWalls = false;
+  boolean showIntro = true; 
   
   boolean initialized = false; // run setup once
    
@@ -30,7 +31,7 @@ info@binaura.net
   {
     counter = 0;
     
-    size(screen.width,screen.height-100);
+    size(viewportwidth,viewportheight);
     
     if(!initialized)
     {
@@ -153,7 +154,9 @@ info@binaura.net
 
   public void mousePressed()
   {
-    
+    //  get rid of intro image 
+    showIntro = false;
+
     //  custom methods
     if((mouseY> 0) && (mouseY < bar) && (mouseX < width-70)) 
     { 
@@ -231,7 +234,7 @@ class GUI
   
   GUI() 
   {
-    introImage = loadImage("./assets/pix/introMini.png");
+    introImage = loadImage("./assets/pix/intro.png");
     btn1 = loadImage("./assets/pix/btn_1.png");
     btn2 = loadImage("./assets/pix/btn_2.png");
     btn4 = loadImage("./assets/pix/btn_4.png");
@@ -240,9 +243,10 @@ class GUI
   
   public void drawintroImage()
   {
-    fadeOut -= 3.5;
+    //fadeOut -= 3.5;
     
-    if(fadeOut>0)
+    //if(fadeOut>0)
+    if(showIntro)
     {
       imageMode(CENTER);
       tint(255,fadeOut);
