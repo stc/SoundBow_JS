@@ -186,7 +186,7 @@ info@binaura.net
         xArray[i] = wallArray[i].getNewX(i);
       }
       
-      if(mouseX>width-60 && mouseY < 85) 
+      if(mouseX>width-60 && mouseY < 50) 
       {
         myGui.scale1Alpha = 255;
         myGui.scale1Pressed = true;
@@ -198,7 +198,7 @@ info@binaura.net
         myGui.scale2Pressed = true;
         scaling = 1;
       }
-      if(mouseX>width-60 && mouseY > height-110 && mouseY < height-80) 
+      if((mouseX>width-60) && (mouseY > height-130) && (mouseY < height-80)) 
       {
         //  clear wires
         myGui.clearAlpha = 255;
